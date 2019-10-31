@@ -5,7 +5,7 @@ namespace ExcellentTaste.Models
 {
     public enum FoodType
     {
-        [Display(Name = "Kouwe Dranken")] ColdDrink,
+        [Display(Name = "Koude Dranken")] ColdDrink,
         [Display(Name = "Warme Dranken")] HotDrink,
         [Display(Name = "Koud Voorgerecht")] StarterCold,
         [Display(Name = "Warm Voorgerecht")] StarterHot,
