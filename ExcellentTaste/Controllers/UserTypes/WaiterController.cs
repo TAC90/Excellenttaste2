@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ExcellentTaste.Controllers.UserTypes
 {
-    public class WaiterController : Controller
+    public class WaiterController : BaseController
     {
         // GET: Waiter
         public ActionResult Index()

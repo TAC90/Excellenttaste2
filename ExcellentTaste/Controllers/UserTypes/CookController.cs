@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ExcellentTaste.Controllers.UserTypes
 {
-    public class CookController : Controller
+    public class CookController : BaseController
     {
         // GET: Cook
         public ActionResult Index()
