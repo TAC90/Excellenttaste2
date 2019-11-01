@@ -169,14 +169,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911011118442_Iniitial.cs" />
-    <Compile Include="Migrations\201911011118442_Iniitial.designer.cs">
-      <DependentUpon>201911011118442_Iniitial.cs</DependentUpon>
+    <Compile Include="Migrations\201911011126042_Initial.cs" />
+    <Compile Include="Migrations\201911011126042_Initial.designer.cs">
+      <DependentUpon>201911011126042_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationDbContext\201911011125428_Initial.cs" />
+    <Compile Include="Migrations\ApplicationDbContext\201911011125428_Initial.designer.cs">
+      <DependentUpon>201911011125428_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -267,8 +272,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911011118442_Iniitial.resx">
-      <DependentUpon>201911011118442_Iniitial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911011126042_Initial.resx">
+      <DependentUpon>201911011126042_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ApplicationDbContext\201911011125428_Initial.resx">
+      <DependentUpon>201911011125428_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

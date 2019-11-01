@@ -13,44 +13,17 @@ using ExcellentTaste.Models;
 namespace ExcellentTaste.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+        //private ApplicationSignInManager _signInManager;
+        //private ApplicationUserManager _userManager;
 
-        public AccountController()
-        {
-         
-        }
+        public AccountController(){}
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager ) : base (userManager, signInManager)
         {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
-
-        public ApplicationSignInManager SignInManager
-        {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            }
-            private set 
-            { 
-                _signInManager = value; 
-            }
-        }
-
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
+            //UserManager = userManager;
+            //SignInManager = signInManager;
         }
 
         //
@@ -142,9 +115,7 @@ namespace ExcellentTaste.Controllers
         {
             if(User.Identity.IsAuthenticated)
             {
-                var tempId = User.Identity.GetUserId();
-                var currentUser = UserManager.Users.Where(id => id.Id == tempId).FirstOrDefault();
-                if (currentUser.InUserType(UserType.Admin))
+                if (CurrentUser().InUserType(UserType.Admin))
                 {
                     return View();
                 }
@@ -412,27 +383,6 @@ namespace ExcellentTaste.Controllers
         {
             return View();
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                if (_userManager != null)
-                {
-                    _userManager.Dispose();
-                    _userManager = null;
-                }
-
-                if (_signInManager != null)
-                {
-                    _signInManager.Dispose();
-                    _signInManager = null;
-                }
-            }
-
-            base.Dispose(disposing);
-        }
-
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
