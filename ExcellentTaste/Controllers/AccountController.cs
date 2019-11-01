@@ -20,6 +20,7 @@ namespace ExcellentTaste.Controllers
 
         public AccountController()
         {
+         
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -139,7 +140,16 @@ namespace ExcellentTaste.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            if(User.Identity.IsAuthenticated)
+            {
+                var tempId = User.Identity.GetUserId();
+                var currentUser = UserManager.Users.Where(id => id.Id == tempId).FirstOrDefault();
+                if (currentUser.InUserType(UserType.Admin))
+                {
+                    return View();
+                }
+            }
+            return RedirectToAction("Contact", "Home");         
         }
 
         //
