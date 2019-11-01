@@ -1,5 +1,9 @@
 ﻿Enable-Migrations -ContextTypeName: ExcellentTaste.Models.ApplicationDbContext -MigrationsDirectory:Migrations\ApplicationDbContext
 
+
 add-migration -ConfigurationTypeName:ExcellentTaste.Migrations.ApplicationDbContext.Configuration
+add-migration -ConfigurationTypeName:ExcellentTaste.Migrations.Configuration
+
 
 update-database -ConfigurationTypeName:ExcellentTaste.Migrations.ApplicationDbContext.Configuration
+update-database -ConfigurationTypeName:ExcellentTaste.Migrations.Configuration
