@@ -1,6 +1,7 @@
 ﻿using ExcellentTaste.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -50,49 +51,40 @@ namespace ExcellentTaste.Controllers
             return currentUser;
         }
 
-        public void RedirectToIndex(bool correct)
+        public ViewResult RedirectToIndexView(bool correct)
         {
             if (!correct)
             {
                 switch (CurrentUser().UserType)
                 {
                     case UserType.Bartender:
-                        RedirectToAction("Index", "Bartender");
-                        break;
+                        return View("Index", "Bartender");
                     case UserType.Cook:
-                        RedirectToAction("Index", "Cook");
-                        break;
+                        return View("Index", "Cook");
                     case UserType.Receptionist:
-                        RedirectToAction("Index", "Receptionist");
-                        break;
+                        return View("Index", "Receptionist");
                     case UserType.Waiter:
-                        RedirectToAction("Index", "Waiter");
-                        break;
+                        return View("Index", "Waiter");
                     default:
-                        RedirectToAction("Index", "Home");
-                        break;
+                        return View("Index", "Home");
                 }
             }
+            else return View("Index", "Home");
+
         }
 
-        public ViewResult RedirectToIndexView()
+        public bool TypeAllowed(UserType[] type)
         {
-
-            switch (CurrentUser().UserType)
+            foreach (var userRole in type)
             {
-                case UserType.Bartender:
-                    return View("Index", "Bartender");
-                case UserType.Cook:
-                    return View("Index", "Cook");
-                case UserType.Receptionist:
-                    return View("Index", "Receptionist");
-                case UserType.Waiter:
-                    return View("Index", "Waiter");
-                default:
-                    return View("Index", "Home");
+                if (CurrentUser().UserType == userRole)
+                {
+                    return true;
+                }
             }
-
+            return false;
         }
+
 
         protected override void Dispose(bool disposing)
         {

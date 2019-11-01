@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ExcellentTaste.Models;
+using System.Collections.Generic;
 
 namespace ExcellentTaste.Controllers
 {
@@ -30,7 +31,7 @@ namespace ExcellentTaste.Controllers
                 ViewBag.ReturnUrl = returnUrl;
                 return View();
             }
-            else return RedirectToIndexView();
+            else return RedirectToIndexView(TypeAllowed(new UserType[]{ UserType.Admin }));
         }
 
         //
@@ -117,7 +118,7 @@ namespace ExcellentTaste.Controllers
                 {
                     return View();
                 }
-                else RedirectToIndex(false);
+                else RedirectToIndexView(false);
             }
             return RedirectToAction("Index", "Home");         
         }
