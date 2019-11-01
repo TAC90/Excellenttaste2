@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/ExcellentTaste/Migrations/ApplicationDbContext/201911011011058_Initial.cs
+/ExcellentTaste/Migrations

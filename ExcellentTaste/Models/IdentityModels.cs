@@ -32,6 +32,10 @@ namespace ExcellentTaste.Models
                 return $"{FirstName} {LastName}";
             }
         }
+        public bool InUserType(UserType type )
+        {
+            return type == this.UserType ? true : false;
+        }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
