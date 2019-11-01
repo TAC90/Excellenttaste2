@@ -8,7 +8,6 @@ namespace ExcellentTaste.Models
         {
 
         }
-        public DbSet<User> Users { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Food> Foods { get; set; }

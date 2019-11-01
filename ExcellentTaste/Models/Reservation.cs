@@ -18,8 +18,8 @@ namespace ExcellentTaste.Models
         public DateTime EndTime { get; set; }
         public string GuestIP { get; set; }
         public int Table { get; set; }
-        public User Ober { get; set; }
-        public User Receptionist { get; set; }
+        public string OberId { get; set; }
+        public string ReceptionistId { get; set; }
         public ICollection<Order> Orders { get; set; }
         
     }

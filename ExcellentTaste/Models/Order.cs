@@ -10,7 +10,7 @@ namespace ExcellentTaste.Models
     {
         [Key]
         public int OrderId { get; set; }
-        public User Waiter { get; set; }
+        public string WaiterId { get; set; }
         public bool FoodFinished { get; set; }
         public bool DrinksFinished { get; set; }
         public virtual ICollection<FoodOrder> FoodOrders { get; set; }
