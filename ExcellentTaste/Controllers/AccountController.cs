@@ -115,12 +115,12 @@ namespace ExcellentTaste.Controllers
         {
             if(User.Identity.IsAuthenticated)
             {
-                if (CurrentUser().InUserType(UserType.Admin))
+                if (CurrentUser().IsUserType(UserType.Admin))
                 {
                     return View();
                 }
             }
-            return RedirectToAction("Contact", "Home");         
+            return RedirectToAction("Login", "Account");         
         }
 
         //

@@ -22,8 +22,7 @@ namespace ExcellentTaste.Controllers
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager) : base(userManager, signInManager)
         {
-            //UserManager = userManager;
-            //SignInManager = signInManager;
+
         }
 
         //

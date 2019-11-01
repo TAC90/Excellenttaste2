@@ -42,7 +42,7 @@ namespace ExcellentTaste.Models
                 return $"{FirstName} {LastName}";
             }
         }
-        public bool InUserType(UserType type )
+        public bool IsUserType(UserType type )
         {
             return type == this.UserType ? true : false;
         }
