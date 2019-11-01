@@ -174,14 +174,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910291406476_Initial.cs" />
-    <Compile Include="Migrations\201910291406476_Initial.designer.cs">
-      <DependentUpon>201910291406476_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910291417223_TablesAdded.cs" />
-    <Compile Include="Migrations\201910291417223_TablesAdded.designer.cs">
-      <DependentUpon>201910291417223_TablesAdded.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\ApplicationDbContext\201910311413512_initial.cs" />
     <Compile Include="Migrations\ApplicationDbContext\201910311413512_initial.designer.cs">
       <DependentUpon>201910311413512_initial.cs</DependentUpon>
@@ -276,12 +268,6 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910291406476_Initial.resx">
-      <DependentUpon>201910291406476_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910291417223_TablesAdded.resx">
-      <DependentUpon>201910291417223_TablesAdded.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ApplicationDbContext\201910311413512_initial.resx">
       <DependentUpon>201910311413512_initial.cs</DependentUpon>
     </EmbeddedResource>
