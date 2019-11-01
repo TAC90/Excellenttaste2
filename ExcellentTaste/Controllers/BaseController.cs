@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ExcellentTaste.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ExcellentTaste.Models;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
 
 namespace ExcellentTaste.Controllers
 {
@@ -14,7 +12,7 @@ namespace ExcellentTaste.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
-        public BaseController(){}
+        public BaseController() { }
         public BaseController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
@@ -50,6 +48,50 @@ namespace ExcellentTaste.Controllers
             var tempId = User.Identity.GetUserId();
             var currentUser = UserManager.Users.Where(id => id.Id == tempId).FirstOrDefault();
             return currentUser;
+        }
+
+        public void RedirectToIndex(bool correct)
+        {
+            if (!correct)
+            {
+                switch (CurrentUser().UserType)
+                {
+                    case UserType.Bartender:
+                        RedirectToAction("Index", "Bartender");
+                        break;
+                    case UserType.Cook:
+                        RedirectToAction("Index", "Cook");
+                        break;
+                    case UserType.Receptionist:
+                        RedirectToAction("Index", "Receptionist");
+                        break;
+                    case UserType.Waiter:
+                        RedirectToAction("Index", "Waiter");
+                        break;
+                    default:
+                        RedirectToAction("Index", "Home");
+                        break;
+                }
+            }
+        }
+
+        public ViewResult RedirectToIndexView()
+        {
+
+            switch (CurrentUser().UserType)
+            {
+                case UserType.Bartender:
+                    return View("Index", "Bartender");
+                case UserType.Cook:
+                    return View("Index", "Cook");
+                case UserType.Receptionist:
+                    return View("Index", "Receptionist");
+                case UserType.Waiter:
+                    return View("Index", "Waiter");
+                default:
+                    return View("Index", "Home");
+            }
+
         }
 
         protected override void Dispose(bool disposing)

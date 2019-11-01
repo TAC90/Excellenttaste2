@@ -15,24 +15,22 @@ namespace ExcellentTaste.Controllers
     [Authorize]
     public class AccountController : BaseController
     {
-        //private ApplicationSignInManager _signInManager;
-        //private ApplicationUserManager _userManager;
-
         public AccountController(){}
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager ) : base (userManager, signInManager)
-        {
-            //UserManager = userManager;
-            //SignInManager = signInManager;
-        }
+        {}
 
         //
         // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            ViewBag.ReturnUrl = returnUrl;
-            return View();
+            if (!User.Identity.IsAuthenticated)
+            {
+                ViewBag.ReturnUrl = returnUrl;
+                return View();
+            }
+            else return RedirectToIndexView();
         }
 
         //
@@ -119,8 +117,9 @@ namespace ExcellentTaste.Controllers
                 {
                     return View();
                 }
+                else RedirectToIndex(false);
             }
-            return RedirectToAction("Login", "Account");         
+            return RedirectToAction("Index", "Home");         
         }
 
         //
