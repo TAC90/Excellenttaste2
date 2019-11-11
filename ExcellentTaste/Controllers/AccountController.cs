@@ -31,7 +31,7 @@ namespace ExcellentTaste.Controllers
                 ViewBag.ReturnUrl = returnUrl;
                 return View();
             }
-            else return RedirectToIndexView(TypeAllowed(new UserType[]{ UserType.Admin }));
+            else return RedirectToAction("Index", CurrentUser().UserType.ToString("g"));
         }
 
         //
