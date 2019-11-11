@@ -31,7 +31,7 @@ namespace ExcellentTaste.Controllers
                 ViewBag.ReturnUrl = returnUrl;
                 return View();
             }
-            else return RedirectToAction("Index", CurrentUser().UserType.ToString("g"));
+            else return RedirectToAction("Index", CurrentUserTypeToString());
         }
 
         //
@@ -52,7 +52,7 @@ namespace ExcellentTaste.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToAction("Index", CurrentUser(model.Email).UserType.ToString("g"));
+                    return RedirectToAction("Index", CurrentUserTypeToString(model.Email));
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

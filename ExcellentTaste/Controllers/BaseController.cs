@@ -59,7 +59,6 @@ namespace ExcellentTaste.Controllers
 
         public ViewResult RedirectToIndexView()
         {
-
                 switch (CurrentUser().UserType)
                 {
                     case UserType.Bartender:
@@ -75,6 +74,15 @@ namespace ExcellentTaste.Controllers
                     default:
                         return View("Index", "Home");
                 }
+        }
+
+        public string CurrentUserTypeToString()
+        {
+            return CurrentUser().UserType.ToString("g");
+        }
+        public string CurrentUserTypeToString(string email)
+        {
+            return CurrentUser(email).UserType.ToString("g");
         }
         public bool TypeAllowed(UserType[] type)
         {
