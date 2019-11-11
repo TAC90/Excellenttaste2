@@ -47,7 +47,13 @@ namespace ExcellentTaste.Controllers
         public ApplicationUser CurrentUser()
         {
             var tempId = User.Identity.GetUserId();
-            var currentUser = UserManager.Users.Where(id => id.Id == tempId).FirstOrDefault();
+            var currentUser = UserManager.Users.Where(user => user.Id == tempId).FirstOrDefault();
+            return currentUser;
+        }
+
+        public ApplicationUser CurrentUser(string email)
+        {
+            var currentUser = UserManager.Users.Where(user => user.Email == email).FirstOrDefault();
             return currentUser;
         }
 
@@ -92,7 +98,6 @@ namespace ExcellentTaste.Controllers
                         return View("Index", "Home");
                 }
         }
-
         public bool TypeAllowed(UserType[] type)
         {
             foreach (var userRole in type)

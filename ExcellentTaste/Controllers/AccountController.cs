@@ -52,7 +52,7 @@ namespace ExcellentTaste.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToIndexView(User.Identity.IsAuthenticated);
+                    return RedirectToAction("Index", CurrentUser(model.Email).UserType.ToString("g"));
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
