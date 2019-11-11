@@ -35,9 +35,19 @@ textarea {
         margin-top:auto;
         margin-bottom:auto;
     }
-    input[type="text"], textarea{
-        
+    .body-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
     }
+
+    .mobile-login{
+        position:relative;
+        top:50%;
+        left:50%;
+
+    }
+
     .form-control {
         text-align: center;
         vertical-align: middle;
@@ -46,11 +56,12 @@ textarea {
         border-color: #222;
         color: black;
         font-size: 16pt;
-        height:50px;
+        height: 50px;
     }
 
     .btn-default {
         background-color: gray;
+        color: black;
         border-color: #222;
         width: 200px;
         font-size: 16pt;
