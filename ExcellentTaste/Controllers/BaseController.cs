@@ -51,9 +51,9 @@ namespace ExcellentTaste.Controllers
             return currentUser;
         }
 
-        public ViewResult RedirectToIndexView(bool correct)
+        public ViewResult RedirectToIndexView(bool correct)//if Authenticated
         {
-            if (!correct)
+            if (correct)
             {
                 switch (CurrentUser().UserType)
                 {
@@ -65,12 +65,32 @@ namespace ExcellentTaste.Controllers
                         return View("Index", "Receptionist");
                     case UserType.Waiter:
                         return View("Index", "Waiter");
+                    case UserType.Admin:
+                        return View("Index", "Admin");
                     default:
                         return View("Index", "Home");
                 }
             }
             else return View("Index", "Home");
+        }
+        public ViewResult RedirectToIndexView()
+        {
 
+                switch (CurrentUser().UserType)
+                {
+                    case UserType.Bartender:
+                        return View("Index", "Bartender");
+                    case UserType.Cook:
+                        return View("Index", "Cook");
+                    case UserType.Receptionist:
+                        return View("Index", "Receptionist");
+                    case UserType.Waiter:
+                        return View("Index", "Waiter");
+                    case UserType.Admin:
+                        return View("Index", "Admin");
+                    default:
+                        return View("Index", "Home");
+                }
         }
 
         public bool TypeAllowed(UserType[] type)

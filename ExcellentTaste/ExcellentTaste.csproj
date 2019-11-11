@@ -172,6 +172,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserTypes\AdminController.cs" />
     <Compile Include="Controllers\UserTypes\BartenderController.cs" />
     <Compile Include="Controllers\UserTypes\CookController.cs" />
     <Compile Include="Controllers\UserTypes\ReceptionistController.cs" />
@@ -262,6 +263,7 @@
     <Content Include="Views\Cook\Index.cshtml" />
     <Content Include="Views\Receptionist\Index.cshtml" />
     <Content Include="Views\Waiter\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

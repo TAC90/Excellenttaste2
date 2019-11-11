@@ -17,7 +17,7 @@ namespace ExcellentTaste.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return Redi(); //RedirectToIndexView(User.Identity.IsAuthenticated);
         }
 
         public ActionResult Contact()

@@ -52,7 +52,7 @@ namespace ExcellentTaste.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToIndexView(User.Identity.IsAuthenticated);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -118,7 +118,7 @@ namespace ExcellentTaste.Controllers
                 {
                     return View();
                 }
-                else RedirectToIndexView(false);
+                else RedirectToIndexView();
             }
             return RedirectToAction("Index", "Home");         
         }
