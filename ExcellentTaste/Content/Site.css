@@ -3,6 +3,8 @@
     padding-bottom: 20px;
 }
 
+
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -21,4 +23,47 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+@media screen and (max-width: 500px){
+    body {
+        background-image: url("/Images/Login.gif");
+        background-color: darkslategrey;
+        background-size: cover;
+        text-align:center;
+        color:lightgray;
+        margin-top:auto;
+        margin-bottom:auto;
+    }
+    input[type="text"], textarea{
+        
+    }
+    .form-control {
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        background-color: gray;
+        border-color: #222;
+        color: black;
+        font-size: 16pt;
+        height:50px;
+    }
+
+    .btn-default {
+        background-color: gray;
+        border-color: #222;
+        width: 200px;
+        font-size: 16pt;
+    }
+    .text-danger{
+        color:red;
+        font-weight:600;
+    }
+    /*.form-horizontal {
+        text-align: center;
+    }
+    .form-group.col-md-10{
+        vertical-align:auto;
+        text-align: center;
+    }*/
 }
