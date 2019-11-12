@@ -37,7 +37,7 @@ textarea {
         margin-bottom:auto;
     }
     .body-content {
-        position: absolute;
+        /*position: absolute;*/
         top: 50%;
         left: 50%;
         padding:0;
@@ -86,10 +86,51 @@ textarea {
         color:red;
         font-weight:600;
     }
-    .navbar-nav {
+    .navbar-nav { /*Navbar scroll fix*/
         margin:4px 0px;
     }
     .navbar-nav > li > a{
         font-size:20pt;
     }
+    .navbar-inverse{
+        background-color:#222;
+        border-color:transparent;
+    }
+    .index-container{
+        position:absolute;
+        height:90%;
+        width:100%;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-areas: 'table table' 'button1 button2' 'button3 button4' 'list list' 'check check';
+        grid-gap: 20px;
+        padding: 20px;
+        grid-template-columns:minmax(60px,auto);
+        height:100%;
+    }
+        
+
+    .grid-container button{
+        color:lightgray;
+        background-color:darkslategray;
+        border-color:gray;
+        font-size:14pt;
+    }
+    .grid-container > div {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 10pt;
+        color: lightgray;
+        background-color: darkslategray;
+        border-color: gray;
+    }
+    .grid-table{grid-area:table; height:60%}
+    .grid-button1{grid-area:button1}
+    .grid-button2 {grid-area:button2}
+    .grid-button3{grid-area:button3}
+    .grid-button4{grid-area:button4}
+    .grid-list{grid-area:list; }
+    .grid-check{grid-area:check}
+
 }

@@ -3,6 +3,16 @@
     Layout = "~/Views/Waiter/_Waiter.cshtml";
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
+    <div class="index-container">
+        <div class="grid-container">
+            <button class="grid-table">Tafel:</button>
+            <button class="grid-button1">Voorgerecht</button>
+            <button class="grid-button2">Hoofdgerecht</button>
+            <button class="grid-button3">Nagerecht</button>
+            <button class="grid-button4">Dranken</button>
+            <div class="grid-list">
+                @Html.Partial("_LoginPartial")
+            </div>
+            <button class="grid-check">Afrekenen</button>
+        </div>
+    </div>
