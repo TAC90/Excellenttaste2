@@ -13,6 +13,17 @@ namespace ExcellentTaste.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         public ApplicationDbContext dbIdentityContext = new ApplicationDbContext();
+        protected override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var username = CurrentUser().FirstName;
+                ViewData.Add("FirstName", username);
+            }
+            base.OnActionExecuted(filterContext);
+        }
+
+
         public BaseController() { }
         public BaseController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
