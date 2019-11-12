@@ -12,7 +12,7 @@ namespace ExcellentTaste.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        public ApplicationDbContext dbIdentityContext = new ApplicationDbContext();
         public BaseController() { }
         public BaseController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
