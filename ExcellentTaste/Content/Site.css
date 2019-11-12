@@ -113,7 +113,7 @@ textarea {
 
     .grid-container button{
         color:lightgray;
-        background-color:darkslategray;
+        background-color:#404040;
         border-color:gray;
         font-size:14pt;
     }
@@ -122,8 +122,7 @@ textarea {
         padding: 20px 0;
         font-size: 10pt;
         color: lightgray;
-        background-color: darkslategray;
-        border-color: gray;
+        background-color: #4c4c4c;
     }
     .grid-table{grid-area:table; height:60%}
     .grid-button1{grid-area:button1}
