@@ -17,7 +17,7 @@ namespace ExcellentTaste.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                var username = CurrentUser().FirstName;
+                var username = CurrentUser().FullName;
                 ViewData.Add("FirstName", username);
             }
             base.OnActionExecuted(filterContext);

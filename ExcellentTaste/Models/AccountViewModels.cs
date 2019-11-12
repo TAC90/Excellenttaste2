@@ -65,25 +65,35 @@ namespace ExcellentTaste.Models
 
     public class RegisterViewModel
     {
-        [Required]
+        [Required(ErrorMessage ="Vul een Email in")]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vul een Voornaam in")]
         [DataType(DataType.Text)]
-        [Display(Name = "First Name")]
+        [Display(Name = "Voornaam")]
         public string FirstName { get; set; }
 
+        [Required(ErrorMessage = "Vul een Achternaam in")]
+        [DataType(DataType.Text)]
+        [Display(Name = "Achternaam")]
+        public string LastName { get; set; }
+
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Range(1,10,ErrorMessage ="Kies een Rol")]
+        [Display(Name = "Rol")]
+        public UserType UserType { get; set; }
+
+        [Required(ErrorMessage = "Vul een Wachtwoord in")]
+        [StringLength(100, ErrorMessage = "Het {0} moet tenminste {2} tekens lang zijn.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Wachtwoord")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Bevestig Wachtwoord")]
+        [Compare("Password", ErrorMessage = "De wachtwoorden komen niet overeen.")]
         public string ConfirmPassword { get; set; }
     }
 

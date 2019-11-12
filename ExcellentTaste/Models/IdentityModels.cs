@@ -10,16 +10,17 @@ namespace ExcellentTaste.Models
 {
     public enum UserType
     {
+
         [Display(Name = "Beheerder")] 
-        Admin,
+        Admin = 1,
         [Display(Name = "Ober")] 
-        Waiter,
+        Waiter =2 ,
         [Display(Name = "Kok")] 
-        Cook,
+        Cook =3,
         [Display(Name = "Barman")] 
-        Bartender,
+        Bartender =4,
         [Display(Name = "Receptionist")] 
-        Receptionist,
+        Receptionist =5,
 
     }
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
