@@ -16,7 +16,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                @Html.Label(ViewData["FirstName"].ToString(), new { @class = "navbar-brand" })
             </div>
+
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.Partial("_LoginPartial")</li>

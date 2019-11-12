@@ -86,4 +86,10 @@ textarea {
         color:red;
         font-weight:600;
     }
+    .navbar-nav {
+        margin:4px 0px;
+    }
+    .navbar-nav > li > a{
+        font-size:20pt;
+    }
 }
