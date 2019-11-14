@@ -1,8 +1,12 @@
 ﻿namespace ExcellentTaste.Migrations
 {
     using ExcellentTaste.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
+
 
     internal sealed class Configuration : DbMigrationsConfiguration<ExcellentTaste.Models.ExcellentTasteContext>
     {
@@ -13,6 +17,19 @@
 
         protected override void Seed(ExcellentTaste.Models.ExcellentTasteContext context)
         {
+            var roleStore = new RoleStore<IdentityRole>(context);
+            var roleManager = new RoleManager<IdentityRole>(roleStore);
+
+            foreach (string userRoles in Enum.GetNames(typeof(UserType)))
+            {
+                var applicationRoleAdministrator = new IdentityRole { Name = userRoles };
+                if (!roleManager.RoleExists(applicationRoleAdministrator.Name))
+                {
+                    roleManager.Create(applicationRoleAdministrator);
+                }
+            }
+
+            
             //context.Users.AddOrUpdate(new User() { UserId = 1, FirstName = "Al", LastName = "Capone", UserType = UserType.Admin });
             //context.Users.AddOrUpdate(new User() { UserId = 2, FirstName = "Gordon", LastName = "Ramsey", UserType = UserType.Cook });
             //context.Users.AddOrUpdate(new User() { UserId = 3, FirstName = "Jamie", LastName = "Oliver", UserType = UserType.Cook });

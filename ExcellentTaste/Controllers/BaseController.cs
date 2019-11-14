@@ -13,6 +13,7 @@ namespace ExcellentTaste.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationRoleManager _roleManager;
         public ApplicationDbContext dbIdentityContext = new ApplicationDbContext();
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
@@ -56,6 +57,19 @@ namespace ExcellentTaste.Controllers
             {
                 _signInManager = value;
             }
+        }
+
+        public ApplicationRoleManager ApplicationRoleManager
+        {
+            get
+            {
+                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+            }
+            private set
+            {
+                _roleManager = value;
+            }
+
         }
 
         public ApplicationUser CurrentUser()
