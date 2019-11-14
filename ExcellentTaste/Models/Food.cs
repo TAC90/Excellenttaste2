@@ -28,7 +28,6 @@ namespace ExcellentTaste.Models
         [Display(Name = "Naam")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Vul een omschrijving in")]
         [DataType(DataType.Text)]
         [Display(Name = "Omschrijving")]
         public string Description { get; set; }
@@ -43,6 +42,8 @@ namespace ExcellentTaste.Models
         [Range(1, 10, ErrorMessage = "Kies een categorie")]
         [Display(Name = "Categorie")]
         public FoodType FoodType { get; set; }
+
+        public bool Active { get; set; }
         public virtual ICollection<FoodOption> FoodOptions { get; set; }
         public virtual ICollection<FoodOrder> FoodOrders { get; set; }
 

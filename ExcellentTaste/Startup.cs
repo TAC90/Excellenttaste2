@@ -32,7 +32,7 @@ namespace ExcellentTaste
                 var user = new ApplicationUser();
                 user.UserName = "admin@admin.com";
                 user.Email = "admin@admin.com";
-                user.UserType = 0;
+                user.UserType = UserType.Admin;
                 string pwd = "Admin.123";
                 var checkUser = userManager.Create(user, pwd);
                 //if (checkUser.Succeeded)

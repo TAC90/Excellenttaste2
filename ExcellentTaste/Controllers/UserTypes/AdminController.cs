@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace ExcellentTaste.Controllers.UserTypes
 {
+    [Authorize(Roles ="Admin")]
     public class AdminController : BaseController
     {
         //DataBases

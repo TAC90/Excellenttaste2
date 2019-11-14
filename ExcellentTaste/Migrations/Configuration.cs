@@ -17,17 +17,6 @@
 
         protected override void Seed(ExcellentTaste.Models.ExcellentTasteContext context)
         {
-            var roleStore = new RoleStore<IdentityRole>(context);
-            var roleManager = new RoleManager<IdentityRole>(roleStore);
-
-            foreach (string userRoles in Enum.GetNames(typeof(UserType)))
-            {
-                var applicationRoleAdministrator = new IdentityRole { Name = userRoles };
-                if (!roleManager.RoleExists(applicationRoleAdministrator.Name))
-                {
-                    roleManager.Create(applicationRoleAdministrator);
-                }
-            }
 
             
             //context.Users.AddOrUpdate(new User() { UserId = 1, FirstName = "Al", LastName = "Capone", UserType = UserType.Admin });
@@ -39,7 +28,7 @@
             //context.Users.AddOrUpdate(new User() { UserId = 7, FirstName = "Tijs", LastName = "Verwest", UserType = UserType.Waiter });
 
             var food1 = new Food { FoodId = 1, Name = "Steak", FoodType = FoodType.MainDish, Price = 12.50m, FoodOptions = new List<FoodOption>() };
-            var food2 = new Food { FoodId = 2, Name = "Zalm", FoodType = FoodType.MainDish, Price = 14m };
+            var food2 = new Food { FoodId = 2, Name = "Zalm", FoodType = FoodType.MainDish, Price = 14m  };
 
             var foodOption1 = new FoodOption { FoodOptionId = 1, Option = "Rare" };
             var foodOption2 = new FoodOption { FoodOptionId = 2, Option = "Medium Rare" };

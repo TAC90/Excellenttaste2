@@ -134,12 +134,12 @@ namespace ExcellentTaste.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, UserType = model.UserType, LastName = model.LastName};
                 var result = await UserManager.CreateAsync(user, model.Password);
-               
+                await UserManager.AddToRoleAsync(CurrentUser(model.Email).Id, model.UserType.ToString());
+
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    
+                   
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

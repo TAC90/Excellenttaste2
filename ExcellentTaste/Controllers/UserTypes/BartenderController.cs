@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace ExcellentTaste.Controllers.UserTypes
 {
+    [Authorize(Roles = "Admin, Bartender")]
+
     public class BartenderController : BaseController
     {
         // GET: Bartender
