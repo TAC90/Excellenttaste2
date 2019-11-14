@@ -186,6 +186,7 @@
     <Compile Include="Models\ExcellentTasteContext.cs" />
     <Compile Include="Models\Food.cs" />
     <Compile Include="Models\FoodOption.cs" />
+    <Compile Include="Models\FoodViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
@@ -258,6 +259,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\_Blank.cshtml" />
     <Content Include="Views\Waiter\_Waiter.cshtml" />
+    <Content Include="Views\Admin\CreateFood.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
