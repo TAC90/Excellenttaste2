@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<ExcellentTaste.Models.Food>
-
 @{
     ViewBag.Title = "CreateOrder";
 }
@@ -14,6 +13,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
+        @Html.Label("Hoeveelheid")
+        <th>
+        </th>
         <th></th>
     </tr>
 
@@ -24,6 +26,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.FoodId }) |

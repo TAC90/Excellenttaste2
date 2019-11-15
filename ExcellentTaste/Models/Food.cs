@@ -5,10 +5,10 @@ namespace ExcellentTaste.Models
 {
     public enum FoodType
     {
-        [Display(Name = "Dranken")] Drinks,
-        [Display(Name = "Voorgerecht")] Starters,
-        [Display(Name = "Hoofdgerecht")] MainDish,
-        [Display(Name = "Nagerechten")] Desserts,
+        [Display(Name = "Dranken")] Drinks = 1,
+        [Display(Name = "Voorgerecht")] Starters = 2,
+        [Display(Name = "Hoofdgerecht")] MainDish = 3,
+        [Display(Name = "Nagerechten")] Desserts = 4,
     }
     public class Food
     {

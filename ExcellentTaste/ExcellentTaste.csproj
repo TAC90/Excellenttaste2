@@ -184,6 +184,14 @@
     <Compile Include="Migrations\201911141415139_Initial.designer.cs">
       <DependentUpon>201911141415139_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911150946050_FoodChanges.cs" />
+    <Compile Include="Migrations\201911150946050_FoodChanges.designer.cs">
+      <DependentUpon>201911150946050_FoodChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911150954070_StarterFood.cs" />
+    <Compile Include="Migrations\201911150954070_StarterFood.designer.cs">
+      <DependentUpon>201911150954070_StarterFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDbContext\201911141413410_Initial.cs" />
     <Compile Include="Migrations\ApplicationDbContext\201911141413410_Initial.designer.cs">
       <DependentUpon>201911141413410_Initial.cs</DependentUpon>
@@ -289,6 +297,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911141415139_Initial.resx">
       <DependentUpon>201911141415139_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911150946050_FoodChanges.resx">
+      <DependentUpon>201911150946050_FoodChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911150954070_StarterFood.resx">
+      <DependentUpon>201911150954070_StarterFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ApplicationDbContext\201911141413410_Initial.resx">
       <DependentUpon>201911141413410_Initial.cs</DependentUpon>

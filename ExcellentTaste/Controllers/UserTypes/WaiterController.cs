@@ -16,6 +16,7 @@ namespace ExcellentTaste.Controllers.UserTypes
         {
             return View();
         }
+
         public ActionResult CreateOrder(FoodType tempFoodType)
         {
             var tempFoodIEnum = new List<Food>();
@@ -26,7 +27,7 @@ namespace ExcellentTaste.Controllers.UserTypes
                     tempFoodIEnum.Add(SelectedFood);
                 }
             }
-            return View(tempFoodIEnum.AsEnumerable());
+            return View(tempFoodIEnum);
         }
     }
 }
