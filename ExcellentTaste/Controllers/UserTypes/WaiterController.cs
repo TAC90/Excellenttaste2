@@ -17,8 +17,11 @@ namespace ExcellentTaste.Controllers.UserTypes
             return View();
         }
 
-        public ActionResult CreateOrder(FoodType tempFoodType)
+        public ActionResult CreateOrder(FoodType? tempFoodType)
         {
+            if(tempFoodType == null) {
+                return RedirectToAction("Index", CurrentUserTypeToString());
+            }
             var tempFoodOrders = new List<FoodOrder>();
 
             foreach (var SelectedFood in ETContext.Foods.Where(food => food.Active == true))
