@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace ExcellentTaste.Models
 {
@@ -23,6 +24,5 @@ namespace ExcellentTaste.Models
         [Display(Name = "Aantal")]
         public int Amount { get; set; }
         public FoodStatus FoodStatus { get; set; }
-
     }
 }

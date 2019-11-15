@@ -7,7 +7,7 @@
         <div class="grid-container">
             <button class="grid-table">Tafel:</button>
             <button class="grid-button1" onclick="@("window.location.href='" + @Url.Action("CreateOrder", "Waiter",new { tempFoodType = FoodType.Starters}) + "'");">Voorgerecht</button>
-            <button class="grid-button2">Hoofdgerecht</button>
+            <button class="grid-button2" onclick="@("window.location.href='" + @Url.Action("CreateOrder", "Waiter",new { tempFoodType = FoodType.MainDish}) + "'");">Hoofdgerecht</button>
             <button class="grid-button3">Nagerecht</button>
             <button class="grid-button4">Dranken</button>
             <div class="grid-list">

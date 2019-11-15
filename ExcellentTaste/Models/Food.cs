@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace ExcellentTaste.Models
 {
@@ -45,8 +47,20 @@ namespace ExcellentTaste.Models
         public bool Hot { get; set; }
 
         public bool Active { get; set; }
+        [Display(Name = "Opties")]
         public virtual ICollection<FoodOption> FoodOptions { get; set; }
         public virtual ICollection<FoodOrder> FoodOrders { get; set; }
+
+        public SelectList SelectListFoodOptions()
+        {
+            var tempSelectItemList = new List<SelectListItem>();
+            foreach (var item in FoodOptions)
+            {
+                tempSelectItemList.Add( new SelectListItem { Text = item.Option, Value = item.FoodOptionId.ToString() });
+            }
+            var TempSelectList = new SelectList(tempSelectItemList,"Value","Text");
+            return TempSelectList;
+        }
 
     }
 }

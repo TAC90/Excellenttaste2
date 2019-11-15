@@ -32,5 +32,11 @@ namespace ExcellentTaste.Controllers.UserTypes
             }
             return View(tempFoodOrders);
         }
+
+        [HttpPost]
+        public ActionResult CreateOrder(FoodOrder tempOrder)
+        {
+            return RedirectToAction("Index");
+        }
     }
 }

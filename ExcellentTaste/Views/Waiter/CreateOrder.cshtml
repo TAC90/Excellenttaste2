@@ -2,43 +2,52 @@
 @{
     ViewBag.Title = "CreateOrder";
 }
-
 <h2>CreateOrder</h2>
+<form method="post">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Food.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Food.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Food.FoodOptions)
+            </th>
+            <th></th>
+        </tr>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.First().Food.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.First().Food.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.First().Amount)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Food.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Food.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modeltem => item.Amount)
-    </td>
-    <td>
-        @Html.EnumDropDownListFor(modeltem => item.Food.FoodOptions.AsEnumerable())
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.FoodId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.FoodId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.FoodId })
-    </td>
-</tr>
-}
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Food.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Food.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modeltem => item.Amount)
+                </td>
+                <td>
+                    @if (item.Food.FoodOptions.Count != 0)
+                    {
+                        @Html.DropDownListFor(modelItem => item.Food.FoodOptions, item.Food.SelectListFoodOptions())
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.FoodId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.FoodId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.FoodId })
+                </td>
+            </tr>
+        }
+    </table>
+    <input type="submit" value="Order" formmethod="post" />
+</form>
 
-</table>
