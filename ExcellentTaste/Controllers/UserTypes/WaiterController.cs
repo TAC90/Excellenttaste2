@@ -19,15 +19,18 @@ namespace ExcellentTaste.Controllers.UserTypes
 
         public ActionResult CreateOrder(FoodType tempFoodType)
         {
-            var tempFoodIEnum = new List<Food>();
+            var tempFoodOrders = new List<FoodOrder>();
+
             foreach (var SelectedFood in ETContext.Foods.Where(food => food.Active == true))
             {
                 if(SelectedFood.FoodType == tempFoodType)
                 {
-                    tempFoodIEnum.Add(SelectedFood);
+                    var tempFoodOrder = new FoodOrder();
+                    tempFoodOrder.Food = SelectedFood;
+                    tempFoodOrders.Add(tempFoodOrder);                    
                 }
             }
-            return View(tempFoodIEnum);
+            return View(tempFoodOrders);
         }
     }
 }

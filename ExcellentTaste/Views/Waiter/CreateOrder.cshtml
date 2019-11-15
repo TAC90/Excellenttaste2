@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ExcellentTaste.Models.Food>
+﻿@model List<ExcellentTaste.Models.FoodOrder>
 @{
     ViewBag.Title = "CreateOrder";
 }
@@ -8,34 +8,37 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.First().Food.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayNameFor(model => model.First().Food.Price)
         </th>
-        @Html.Label("Hoeveelheid")
         <th>
+            @Html.DisplayNameFor(model => model.First().Amount)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FoodId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FoodId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FoodId })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Food.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Food.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modeltem => item.Amount)
+    </td>
+    <td>
+        @Html.EnumDropDownListFor(modeltem => item.Food.FoodOptions.AsEnumerable())
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.FoodId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.FoodId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.FoodId })
+    </td>
+</tr>
 }
 
 </table>

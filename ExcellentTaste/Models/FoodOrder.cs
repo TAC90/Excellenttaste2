@@ -19,7 +19,8 @@ namespace ExcellentTaste.Models
 
         public virtual Food Food { get; set; }
         public virtual Order Order { get; set; }
-
+        [Required]
+        [Display(Name = "Aantal")]
         public int Amount { get; set; }
         public FoodStatus FoodStatus { get; set; }
 
