@@ -180,21 +180,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911141415139_Initial.cs" />
-    <Compile Include="Migrations\201911141415139_Initial.designer.cs">
-      <DependentUpon>201911141415139_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911150946050_FoodChanges.cs" />
-    <Compile Include="Migrations\201911150946050_FoodChanges.designer.cs">
-      <DependentUpon>201911150946050_FoodChanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911150954070_StarterFood.cs" />
-    <Compile Include="Migrations\201911150954070_StarterFood.designer.cs">
-      <DependentUpon>201911150954070_StarterFood.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ApplicationDbContext\201911141413410_Initial.cs" />
-    <Compile Include="Migrations\ApplicationDbContext\201911141413410_Initial.designer.cs">
-      <DependentUpon>201911141413410_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201911151254187_Updates.cs" />
+    <Compile Include="Migrations\201911151254187_Updates.designer.cs">
+      <DependentUpon>201911151254187_Updates.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -295,17 +283,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911141415139_Initial.resx">
-      <DependentUpon>201911141415139_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911150946050_FoodChanges.resx">
-      <DependentUpon>201911150946050_FoodChanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911150954070_StarterFood.resx">
-      <DependentUpon>201911150954070_StarterFood.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ApplicationDbContext\201911141413410_Initial.resx">
-      <DependentUpon>201911141413410_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911151254187_Updates.resx">
+      <DependentUpon>201911151254187_Updates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -8,8 +8,8 @@
             <button class="grid-table">Tafel:</button>
             <button class="grid-button1" onclick="@("window.location.href='" + @Url.Action("CreateOrder", "Waiter",new { tempFoodType = FoodType.Starters}) + "'");">Voorgerecht</button>
             <button class="grid-button2" onclick="@("window.location.href='" + @Url.Action("CreateOrder", "Waiter",new { tempFoodType = FoodType.MainDish}) + "'");">Hoofdgerecht</button>
-            <button class="grid-button3">Nagerecht</button>
-            <button class="grid-button4">Dranken</button>
+            <button class="grid-button3" onclick="@("window.location.href='" + @Url.Action("CreateOrder", "Waiter",new { tempFoodType = FoodType.Desserts}) + "'");">Nagerecht</button>
+            <button class="grid-button4" onclick="@("window.location.href='" + @Url.Action("CreateOrder", "Waiter",new { tempFoodType = FoodType.Drinks}) + "'");">Dranken</button>
             <div class="grid-list">
                 @*@Html.Partial("")*@
             </div>

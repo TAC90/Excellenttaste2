@@ -32,7 +32,9 @@
                     @Html.DisplayFor(modelItem => item.Food.Price)
                 </td>
                 <td>
-                    @Html.DisplayFor(modeltem => item.Amount)
+                    <span id="orderAmount">
+                        @Html.DisplayFor(modelItem => item.Amount, new { @id = "orderAmount" })
+                    </span>
                 </td>
                 <td>
                     @if (item.Food.FoodOptions.Count != 0)
@@ -41,9 +43,7 @@
                     }
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.FoodId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.FoodId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.FoodId })
+                    <input type=button onclick="incrementAmount()" value="+"/>
                 </td>
             </tr>
         }
@@ -51,3 +51,12 @@
     <input type="submit" value="Order" formmethod="post" />
 </form>
 
+<script>
+    function incrementAmount() {
+        var orderAmount = document.getElementById("orderAmount").innerHTML;
+        orderAmount++;
+        document.getElementById("orderAmount").innerHTML = orderAmount;
+        console.log("Amount +");
+    }
+
+</script>
