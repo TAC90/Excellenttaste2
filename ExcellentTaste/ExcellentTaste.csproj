@@ -268,6 +268,7 @@
     <Content Include="Views\Shared\_Blank.cshtml" />
     <Content Include="Views\Waiter\_Waiter.cshtml" />
     <Content Include="Views\Admin\CreateFood.cshtml" />
+    <Content Include="Views\Waiter\CreateOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

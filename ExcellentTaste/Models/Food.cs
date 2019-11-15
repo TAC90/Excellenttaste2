@@ -5,13 +5,10 @@ namespace ExcellentTaste.Models
 {
     public enum FoodType
     {
-        [Display(Name = "Koude Dranken")] ColdDrink,
-        [Display(Name = "Warme Dranken")] HotDrink,
-        [Display(Name = "Koud Voorgerecht")] StarterCold,
-        [Display(Name = "Warm Voorgerecht")] StarterHot,
+        [Display(Name = "Dranken")] Drinks,
+        [Display(Name = "Voorgerecht")] Starters,
         [Display(Name = "Hoofdgerecht")] MainDish,
-        [Display(Name = "Warme Nagerechten")] DessertHot,
-        [Display(Name = "Koude Nagerechten")] DessertCold,
+        [Display(Name = "Nagerechten")] Desserts,
     }
     public class Food
     {
@@ -42,6 +39,10 @@ namespace ExcellentTaste.Models
         [Range(1, 10, ErrorMessage = "Kies een categorie")]
         [Display(Name = "Categorie")]
         public FoodType FoodType { get; set; }
+
+        [Required]
+        [Display(Name = "Is Warm")]
+        public bool Hot { get; set; }
 
         public bool Active { get; set; }
         public virtual ICollection<FoodOption> FoodOptions { get; set; }

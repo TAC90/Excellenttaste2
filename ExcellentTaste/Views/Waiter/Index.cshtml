@@ -1,11 +1,11 @@
-﻿
+﻿@using ExcellentTaste.Models;
 @{
     Layout = "~/Views/Waiter/_Waiter.cshtml";
     ViewBag.Title = "Index";
 }
     <div class="index-container">
         <div class="grid-container">
-            <button class="grid-table">Tafel:</button>
+            <button class="grid-table" onclick="@("window.location.href='" + @Url.Action("actionName", "controllerName", FoodType.StarterCold) + "'",);">Tafel:</button>
             <button class="grid-button1">Voorgerecht</button>
             <button class="grid-button2">Hoofdgerecht</button>
             <button class="grid-button3">Nagerecht</button>
