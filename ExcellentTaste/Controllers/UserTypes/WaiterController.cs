@@ -37,7 +37,7 @@ namespace ExcellentTaste.Controllers.UserTypes
         }
 
         [HttpPost]
-        public ActionResult CreateOrder(string tempOrder)
+        public ActionResult CreateOrder(List<FoodOrder> tempOrders)
         {
             return RedirectToAction("Index");
         }
